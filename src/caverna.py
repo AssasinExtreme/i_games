@@ -34,8 +34,17 @@ class Caverna:
         self.main.style.backgroundImage = 'url(%s)' % CAVEX
         self.main.style.width = 1000
         self.main.style.height = 800
-        return self
 
+        tunel = self .html.DIV()
+        tunel.setAttribute ('style', 'height:700; width: 33.33%; float;')
+        self.main <= tunel
+        tunel = self .html.DIV()
+        tunel.setAttribute ('style', 'height:700; width: 33.33%; float;')
+        self.main <= tunel
+        tunel = self .html.DIV()
+        tunel.setAttribute ('style', 'height:700; width: 33.33%; float;')
+        self.main <= tunel
+        return self
 
 def main(gui):
     print('Caverna 0.1.0')
