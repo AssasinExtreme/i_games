@@ -35,7 +35,7 @@ class Caverna:
         # criando uma colecao de tuneis
 
         self.tunel = {
-            'tunel_%d' % a: Tunel(self.html, "tunel_%d" % a, self.camara).cria_tunel() for a in range(0, 3)
+            'tunel_%d' % a: Tunel(self.html, "tunel_%d" % a, self.camara, self.camara.passagem).cria_tunel() for a in range(0, 3)
         }
         return self
 class Camara:
@@ -66,13 +66,18 @@ class Tunel:
     def __init__(self, html, nome, lugar, saida):
         """Inicia o tunel. """
         self.html, self.nome, self.lugar, self.saida = html, nome, lugar, saida
+        self.entrada = self.passagem = None
         self.passagem = self.div = None
         self.tunel = {}
+
 
     def cria_tunel (self) :
      """Cria o tunel e suas partes."""
      self.div = self.html.DIV(Id=self.nome)
      self.passagem = self.html.DIV(Id='passa_'+self.nome)
+     self.entrada = self.html.DIV(Id='entra_'+self.nome, width="33.33%")
+
+     self.saida <= self.entrada
      self.div.style.backgroundSize = 'cover'
      self.div.style.backgroundImage = 'url(%s)' % CAVEZ
      self.div.style.width = 1000
